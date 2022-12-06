@@ -1,11 +1,11 @@
 'use strict';
 
-const { sqlDatabase } = require('./src/models/index');
 const { start } = require('./src/server');
+const { sequelize } = require('./src/models');
 
-sqlDatabase.sync()
-    .then( () => {
-        console.log('It worked!');
+sequelize.sync()
+    .then( () =>{
+        console.log('successful connection');
         start();
     })
-    .catch( e => console.error(e));
+    .catch(e => console.error(e));
