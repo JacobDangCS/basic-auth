@@ -1,19 +1,24 @@
 'use strict';
 
-require('dotenv').config();
+// 3rd Party Resources
 const express = require('express');
-const cors = require('cors');
+const authRouter = require('./auth/router');
 
+// Prepare the express app
 const app = express();
-app.use(cors());
+
+// Process JSON input and put the data on req.body
 app.use(express.json());
 
-app.get('/', (req, res, next) => {
-    res.status(200).send('Hello World!');
-});
 
-function start(){
-    app.listen(PORT, () => console.log('listening on port', PORT))
-}
+// Process FORM input and put the data on req.body
+app.use(express.urlencoded({ extended: true }));
 
-module.exports = { app, start }
+app.use(authRouter);
+
+  modules.export = {
+    app,
+    start: () => app.listen(3000, () => console.log('server up')),
+    sequelize,
+    Users
+  }
