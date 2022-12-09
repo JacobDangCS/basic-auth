@@ -3,6 +3,9 @@
 // 3rd Party Resources
 const express = require('express');
 const authRouter = require('./auth/router');
+const { Users } = require('./auth/models/users-model');
+const sequelize = require('sequelize');
+
 
 // Prepare the express app
 const app = express();
@@ -16,9 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(authRouter);
 
-  modules.export = {
-    app,
-    start: () => app.listen(3000, () => console.log('server up')),
-    sequelize,
-    Users
-  }
+module.exports = {
+  app,
+  start: () => app.listen(3000, () => console.log('server up')),
+  sequelize,
+  Users,
+};
