@@ -1,11 +1,11 @@
 'use strict';
 
-const { start } = require('./src/server');
-const { sequelize } = require('./src/models');
+const { app } = require('./src/server');
+const { sequelize } = require('./src/auth/models/index');
 
 sequelize.sync()
-    .then( () =>{
-        console.log('successful connection');
-        start();
-    })
-    .catch(e => console.error(e));
+  .then(() => {
+    console.log('successful connection');
+    app.listen(3000, () => console.log('server up'));
+  })
+  .catch(e => console.error(e));

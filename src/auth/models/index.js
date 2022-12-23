@@ -4,11 +4,11 @@ const userSchema = require('./users-model');
 const DATABASE_URL = 'sqlite::memory';
 const sequelize = new Sequelize(DATABASE_URL);
 
-const Users = userSchema (sequelize, DataTypes);
+const Users = userSchema(sequelize, DataTypes);
 
-modules.exports = {
-    sequelize,
-    Users,
-}
+module.exports = {
+  sequelize,
+  Users,
+};
 
 

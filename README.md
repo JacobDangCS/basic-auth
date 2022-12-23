@@ -22,11 +22,7 @@ see '.env.sample'
 
 #### Tests
 - How do you run tests?
-    - npm i
-
-- Any tests of note:
     - npm test
-
 
 ## UML
 ![UML](./assets/lab6-image.png)
