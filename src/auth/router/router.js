@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const basicAuth = require('./auth/middleware/basic');
-const { Users } = require('./models');
+const basicAuth = require('../middleware/basic');
+const { Users } = require('../models');
 
 router.post('/signup', async (req, res, next) => {
 

@@ -2,7 +2,7 @@
 
 const base64 = require('base-64');
 const bcrypt = require('bcrypt');
-const { Users } = require('../models');
+const { Users } = require('../models/index');
 
 module.exports = async (req, res, next) => {
   try {
